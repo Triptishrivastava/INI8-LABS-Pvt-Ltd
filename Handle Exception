@@ -19,5 +19,5 @@ public class GlobalExceptionHandler {
         return error;
     }
 
-    // Additional exception handlers can be added as needed.
+    
 }
