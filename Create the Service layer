@@ -1,0 +1,51 @@
+package com.example.demo.service;
+
+import com.example.demo.model.Registration;
+import com.example.demo.repository.RegistrationRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class RegistrationService {
+
+    @Autowired
+    private RegistrationRepository registrationRepository;
+
+    // Create registration
+    public Registration createRegistration(Registration registration) {
+        return registrationRepository.save(registration);
+    }
+
+    // Read all registrations
+    public List<Registration> getAllRegistrations() {
+        return registrationRepository.findAll();
+    }
+
+    // Read registration by ID
+    public Optional<Registration> getRegistrationById(Long id) {
+        return registrationRepository.findById(id);
+    }
+
+    // Update registration
+    public Registration updateRegistration(Long id, Registration registrationDetails) {
+        Registration registration = registrationRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Registration not found"));
+        registration.setName(registrationDetails.getName());
+        registration.setEmail(registrationDetails.getEmail());
+        registration.setDateOfBirth(registrationDetails.getDateOfBirth());
+        registration.setPhoneNumber(registrationDetails.getPhoneNumber());
+        registration.setAddress(registrationDetails.getAddress());
+
+        return registrationRepository.save(registration);
+    }
+
+    // Delete registration
+    public void deleteRegistration(Long id) {
+        Registration registration = registrationRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Registration not found"));
+        registrationRepository.delete(registration);
+    }
+}
