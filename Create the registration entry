@@ -30,5 +30,5 @@ public class Registration {
     @Column(updatable = false)
     private LocalDate registrationDate = LocalDate.now();
 
-    // Getters and Setters
+   
 }
