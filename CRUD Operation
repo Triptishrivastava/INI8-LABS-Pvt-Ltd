@@ -1,0 +1,32 @@
+1. Create (POST):
+
+POST /api/registrations
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "dateOfBirth": "1990-05-15",
+    "phoneNumber": "1234567890",
+    "address": "123 Main St"
+}
+
+2. Read All (GET):
+
+GET /api/registrations
+
+3.Read by ID (GET):
+
+GET /api/registrations/{id}
+
+4.Update (PUT):
+
+PUT /api/registrations/{id}
+{
+    "name": "John Smith",
+    "email": "john.smith@example.com",
+    "dateOfBirth": "1990-06-15",
+    "phoneNumber": "0987654321",
+    "address": "456 Main St"
+}
+
+5.Delete (DELETE):
+DELETE /api/registrations/{id}
