@@ -4,6 +4,5 @@ CREATE TABLE Registration (
     Email VARCHAR(255) NOT NULL UNIQUE, 
     DateOfBirth DATE NOT NULL,          
     PhoneNumber VARCHAR(15),            
-    Address VARCHAR(255),               
-    RegistrationDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP  
+    Address VARCHAR(255),                
 );
