@@ -19,7 +19,6 @@ public class RegistrationService {
         return registrationRepository.save(registration);
     }
 
-    // Read all registrations
     public List<Registration> getAllRegistrations() {
         return registrationRepository.findAll();
     }
